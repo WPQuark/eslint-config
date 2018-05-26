@@ -47,7 +47,7 @@ plugin for VSCode. Enable autoFormat for `javascript` and `javascriptreact` file
 
 ```json
 {
-	"eslint.autoFixOnSave": true
+	"eslint.autoFixOnSave": true,
 	"[javascript]": {
 		"editor.formatOnSave": false
 	},
