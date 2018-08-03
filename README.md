@@ -11,7 +11,7 @@ for auto-fixable codes along with linting.
 Add to project's `devDependency`.
 
 ```bash
-yarn add @wpquark/eslint-config eslint --dev
+yarn add @wpquark/eslint-config eslint prettier --dev
 ```
 
 ### ESLint Config
@@ -42,8 +42,8 @@ Now you are ready to go.
 Install the [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 plugin for VSCode. Enable autoFormat for `javascript` and `javascriptreact` files.
 
-* Go to Code > Preference [File > Preference for Windows & Linux].
-* Edit the WorkSpace Settings (Recommended).
+-   Go to Code > Preference [File > Preference for Windows & Linux].
+-   Edit the WorkSpace Settings (Recommended).
 
 ```json
 {
@@ -57,5 +57,14 @@ plugin for VSCode. Enable autoFormat for `javascript` and `javascriptreact` file
 }
 ```
 
+## Changelog
 
+### `v2.0.1`
 
+-   Breaking: prettier is now a peerDependency.
+-   Upgrade `babel-eslint` parser to `9.x-beta`.
+-   Upgrade other packages to latest stable.
+
+### `v1.0.1`
+
+-   Initial Release.
