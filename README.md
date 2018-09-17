@@ -3,6 +3,8 @@
 </p>
 <h1 align="center">WPQuark Eslint Config</h1>
 
+[![npm version](https://badge.fury.io/js/%40wpquark%2Feslint-config.svg)](https://badge.fury.io/js/%40wpquark%2Feslint-config)
+
 A shared eslint config for WPQuark projects. It uses both eslint and prettier
 for auto-fixable codes along with linting.
 
