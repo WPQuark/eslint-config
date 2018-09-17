@@ -59,6 +59,11 @@ plugin for VSCode. Enable autoFormat for `javascript` and `javascriptreact` file
 
 ## Changelog
 
+### `v3.0.0`
+
+-   Upgrade dependencies to latest.
+-   Now airbnb eslint config supports eslint `^5.3.0`.
+
 ### `v2.0.1`
 
 -   Breaking: prettier is now a peerDependency.
