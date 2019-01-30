@@ -3,19 +3,15 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+// Use this configuration for standard JavaScript Projects.
+
+const rules = require('./config/rules');
+const env = require('./config/env');
+const ex = require('./config/extends');
+
 module.exports = {
-	env: {
-		browser: true,
-		commonjs: true,
-		es6: true,
-		node: true,
-	},
-	extends: [
-		'plugin:jest/recommended',
-		'airbnb',
-		'plugin:prettier/recommended',
-		'prettier/react',
-	],
+	env,
+	extends: ex,
 	parser: 'babel-eslint',
 	parserOptions: {
 		ecmaVersion: 2018,
@@ -24,17 +20,63 @@ module.exports = {
 		},
 		sourceType: 'module',
 	},
+	plugins: ['babel'],
 	rules: {
-		'react/no-unused-prop-types': 1,
-		'react/no-unused-state': 1,
-		'no-unused-vars': 1,
-		'prettier/prettier': ['error'],
-		'no-console': 0,
-		'no-plusplus': [
-			2,
+		// ===================================
+		// Some rules from eslint-plugin-babel
+		// ===================================
+		// First turn them off
+		'new-cap': 'off',
+		camelcase: 'off',
+		'no-invalid-this': 'off',
+		'object-curly-spacing': 'off',
+		semi: 'off',
+		'no-unused-expressions': 'off',
+		'valid-typeof': 'off',
+		// require a capital letter for constructors
+		'babel/new-cap': [
+			'error',
 			{
-				allowForLoopAfterthoughts: true,
+				newIsCap: true,
+				newIsCapExceptions: [],
+				capIsNew: false,
+				capIsNewExceptions: [
+					'Immutable.Map',
+					'Immutable.Set',
+					'Immutable.List',
+				],
 			},
 		],
+		// require camel case names
+		// This one is enhanced from airbnb and accounts for destructuring
+		// and react UNSAFE_component* methods.
+		'babel/camelcase': [
+			'error',
+			{
+				properties: 'never',
+				ignoreDestructuring: true,
+				allow: ['^UNSAFE_'],
+			},
+		],
+		// We would force invalid this rules
+		// But would only warn about it
+		'babel/no-invalid-this': 'warn',
+		// Require object curly spacing
+		'babel/object-curly-spacing': 'error',
+		// We prefer semicolon
+		'babel/semi': ['error', 'always'],
+		// disallow usage of expressions in statement position
+		'babel/no-unused-expressions': [
+			'error',
+			{
+				allowShortCircuit: false,
+				allowTernary: false,
+				allowTaggedTemplates: false,
+			},
+		],
+		// ensure that the results of typeof are compared against a valid string
+		// https://eslint.org/docs/rules/valid-typeof
+		'babel/valid-typeof': ['error', { requireStringLiterals: true }],
+		...rules,
 	},
 };
