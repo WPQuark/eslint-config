@@ -55,16 +55,15 @@ module.exports = {
 			{
 				properties: 'never',
 				ignoreDestructuring: true,
-				allow: ['^UNSAFE_'],
 			},
 		],
 		// We would force invalid this rules
 		// But would only warn about it
 		'babel/no-invalid-this': 'warn',
-		// Require object curly spacing
-		'babel/object-curly-spacing': 'error',
-		// We prefer semicolon
-		'babel/semi': ['error', 'always'],
+		// We don't configure curly spacing because of prettier
+		'babel/object-curly-spacing': 'off',
+		// We don't configure babel/semi because of prettier
+		'babel/semi': 'off',
 		// disallow usage of expressions in statement position
 		'babel/no-unused-expressions': [
 			'error',
