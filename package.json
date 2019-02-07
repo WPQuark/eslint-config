@@ -1,6 +1,6 @@
 {
   "name": "@wpquark/eslint-config",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Shared ESLint config used within WPQuark",
   "main": "index.js",
   "repository": "git@github.com:WPQuark/eslint-config.git",
