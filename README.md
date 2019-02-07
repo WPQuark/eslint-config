@@ -61,6 +61,11 @@ plugin for VSCode. Enable autoFormat for `javascript` and `javascriptreact` file
 
 ## Changelog
 
+### `v3.2.0`
+
+-   Upgrade dependencies to latest.
+-   Add eslint-plugin-babel to the mix.
+
 ### `v3.0.0`
 
 -   Upgrade dependencies to latest.
